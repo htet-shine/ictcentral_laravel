@@ -1,4 +1,4 @@
-# Simple Laravel Blog (Working Progress)
+# Laravel Online Store (Working Progress)
 
 This my second laravel project/application. This project is inspired by [Andre Madarang](https://www.youtube.com/channel/UCtb40EQj2inp8zuaQlLx3iQ "Youtube Channel"). I believe in learning through good examples and practicing. I've learned a lot of things that I did not know about laravel during this project. This is a big step-up from the [Beginner Blog](https://github.com/htet-shine/beginner_laravel_blog) I did while taking laravel classes.
 
