@@ -4,7 +4,7 @@ This my second laravel project/application. This project is inspired by [Andre M
 
 I created a responsive template which can be found [Here](https://github.com/htet-shine/ictcentral_template) myself and follow along with the examples. This is not a clone of Andre Madarang's project as you will see if you look through my source code.
 
-#### Features
+### Features
 * Responsive Design
 * Browse Products by Category
 * Sort Products by Price
@@ -19,11 +19,11 @@ With all of that out of the way lets begin installation.
 
 ---
 
-#### Installation Instructions
+### Installation Instructions
 
 Note that the instructions are written with the mindset that this application would be run on a local server.
 
-##### All Prerequisites
+#### All Prerequisites
 
 1. Download [xampp](https://www.apachefriends.org/download.html) (or similar alternatives)
 1. Download [composer](https://getcomposer.org/download/)
@@ -59,7 +59,26 @@ cd *folder path*
 
 If you see the home page of the application, you've successfully installed the application.
 
-##### Stripe Fix
+#### Update Cart Quantity Fix
+
+If you are going to run this application on a actual live server, this fix won't be necessary. But if you are on `localhost`, follow these steps.
+
+1. Go to the project's root directory `resources\views` and open `cart.blade.php`
+1. Find this line at the bottom of the page between script tags
+```javascript
+axios.patch(`/cart/${id}`, {
+```
+1. Replace it with
+```javascript
+axios.patch(`/your_root_folder_name/public/cart/${id}`, {
+```
+
+The reason that this happened is that it is trying to request patch at `localhost/cart/${id}` which does not exist in http routes. Thats why you need to put actual root directory path before `/cart/${id}`.
+
+On a live server, you will have a domain name such as `www.website.com`. This issue won't exist because that domain become a root directory and  patch request would look like this `www.website.com/cart/${id}`.
+
+
+#### Stripe Fix
 
 This application uses Strip API for checkout functionality. At this point, checkout function will not work as the API keys for stripe are  missing and I cannot share my own keys. So
 
@@ -84,6 +103,7 @@ var stripe = Stripe('your publishable key');
 ```
 
 And you are ready to use check out function. The orders can be seen on your stripe dashboard.
+
 
 ---
 
