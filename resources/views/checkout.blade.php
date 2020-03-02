@@ -91,6 +91,8 @@
 					    <div id="card-errors" role="alert"></div>
 						</div>
 
+						
+
 						<button type="submit" class="button btn-checkout w-100" id="complete-order">Confirm Order</button>
 					</form>
 				</div>
@@ -206,7 +208,7 @@
 			  	address_zip: document.getElementById('postal_code').value
 			  }
 
-			  console.log(options)
+			  // console.log(options)
 
 
 			  stripe.createToken(card, options).then(function(result) {

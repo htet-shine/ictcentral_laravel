@@ -37,6 +37,8 @@ Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 
 Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
 
+Route::get('/test', 'ProductController@test');
+
 // Route::view('/checkout', 'checkout');
 Route::view('/contact', 'contact');
 Route::view('/about', 'about');

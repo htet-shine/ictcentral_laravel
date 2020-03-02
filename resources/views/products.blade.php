@@ -42,6 +42,7 @@
 
 						@if ($products->count() > 0)
 							@foreach ($products as $product)
+							
 								<div class="columns col-md-6 col-lg-4">
 									<div class="product-box">
 										<div class="content-img">
@@ -54,6 +55,12 @@
 												<h1>{{ $product->name }}</h1>
 											</a>
 											<p>{{ $product->details }}</p>
+											<p>
+												@foreach ($product->categories as $category)
+													{{ $category->name }}
+												@endforeach
+
+											</p>
 											<p>{{ $product->presentPrice() }}</p>
 											<div class="text-left">
 												<form action="{{ url('/cart') }}" method="post">

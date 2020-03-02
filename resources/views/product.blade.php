@@ -14,6 +14,11 @@
 					<div class="aa col-md-6">
 						<h1>{{ $product->name }}</h1>
 						<p class="price">{{ $product->presentPrice() }}</p>
+						<p>
+							@foreach ($product->categories as $category)
+								{{ $category->name }} 
+							@endforeach
+						</p>
 						{{-- <p>Processor: Intel Core i7 9th Gen</p>
 						<p>Ram: 8GB</p>
 						<p>Storage: 512GB SSD</p> --}}

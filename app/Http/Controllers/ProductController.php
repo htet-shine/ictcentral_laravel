@@ -37,7 +37,7 @@ class ProductController extends Controller
 
     } else {
 
-      $products = Product::take(1000); 
+      $products = Product::with('categories')->take(100); 
       $categoryName = "All Products";
 
     }
@@ -89,7 +89,8 @@ class ProductController extends Controller
    */
   public function show($slug)
   {
-    $product = Product::where('slug', $slug)->firstOrFail();
+    $product = Product::with('categories')->where('slug', $slug)->firstOrFail();
+
     $relatedProducts = Product::where('slug','!=', $slug)->relatedProducts()->get();
 
     return view('product')->with([

@@ -14,7 +14,7 @@ class HomePageController extends Controller
    */
   public function index()
   {
-  	$products = Product::take(3)->get();
+  	$products = Product::orderBy('id', 'asc')->take(3)->get();
   	
   	return view('index')->with('products', $products);
   }

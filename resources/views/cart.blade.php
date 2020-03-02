@@ -101,13 +101,14 @@
 					const id = element.getAttribute('data-id')
 					axios.patch(`/cart/${id}`, {
 					    quantity: this.value
+
 					  })
 					  .then(function (response) {
-					    // console.log(response);
+					    console.log(response);
 					    window.location.href = '{{ route('cart.index') }}'
 					  })
 					  .catch(function (error) {
-					    // console.log(error);
+					    console.log(error);
 					    window.location.href = '{{ route('cart.index') }}'
 					  });
 				});

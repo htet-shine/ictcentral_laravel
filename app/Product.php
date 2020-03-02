@@ -8,7 +8,7 @@ class Product extends Model
 {
   public function presentPrice()
   {
-  	return '$'. number_format($this->price);
+  	return '$ '. number_format($this->price);
   }
   public function scoperelatedProducts($query)
   {
