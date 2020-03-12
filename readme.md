@@ -107,7 +107,7 @@ And you are ready to use check out function. The orders can be seen on your stri
 
 ---
 
-I will be updating this repo as I continue with this project. If you have any questions [Send me an Email](mailto:htetshineaung.business@gmail.com)
+I will be updating this repo as I continue with this project. If you have any questions [Send me an Email](mailto:htetshineaung.dev@gmail.com)
 
 Thank you for checking out my repository. Have a good day.
 
